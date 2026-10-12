@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>링클하우스 | 농수산물 발주 자동화</title>
-<meta name="description" content="농수산물 위탁판매 전용 발주 자동화 프로그램. 스마트스토어·롯데ON·11번가·토스쇼핑·테무의 주문 수집, 공급사 발주, 송장 등록, 가격·품절 관리를 자동으로 처리합니다.">
+<meta name="description" content="농수산물 위탁판매 전용 자동화. 스마트스토어·톡스토어·롯데ON·11번가·토스쇼핑·테무 주문을 모아 공급사에 발주하고, 송장 등록, 가격·품절 관리, AI 상품 등록까지 한 번에.">
 <meta property="og:title" content="링클하우스 | 농수산물 발주 자동화">
-<meta property="og:description" content="주문 수집부터 공급사 발주, 송장 등록까지. 국내 오픈마켓 5곳을 한 화면에서.">
+<meta property="og:description" content="주문 수집부터 공급사 발주, 송장 등록, 가격·품절 관리, AI 상품 등록까지. 국내 오픈마켓 6곳을 한 곳에서.">
 <meta property="og:url" content="https://linklehouse.xyz/">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f6b3f'/%3E%3Cpath d='M9 20c0-6 5-10 14-10-1 8-5 12-11 12-1 0-2 0-3-2z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2314834f'/%3E%3Cstop offset='1' stop-color='%230e9f8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M8 21c0-7 6-12 16-12-1 9-6 14-13 14-1 0-2 0-3-2z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="/style.css">
 <link rel="alternate" hreflang="en" href="https://linklehouse.xyz/en/">
@@ -17,101 +17,277 @@
 <body>
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#"><i><svg width="16" height="16" viewBox="0 0 32 32"><path d="M5 22c0-9 7-15 22-15-1 12-8 18-17 18-2 0-4 0-5-3z" fill="#fff"/></svg></i>링클하우스</a>
-    <div class="right"><nav><a href="#flow">어떻게 돌아가나요</a><a href="#features">기능</a><a href="#why">농수산물 전용</a><a href="#contact">문의</a></nav><a class="lang" href="/en/">English</a></div>
+    <a class="logo" href="/"><i><svg width="17" height="17" viewBox="0 0 32 32"><path d="M5 22c0-9 7-15 22-15-1 12-8 18-17 18-2 0-4 0-5-3z" fill="#fff"/></svg></i>링클하우스</a>
+    <div class="right">
+      <nav><a href="#auto">자동화</a><a href="#listing">상품 등록</a><a href="#price">가격 관리</a><a href="#day">하루 흐름</a></nav>
+      <a class="lang" href="/en/">English</a>
+      <a class="btn sm" href="#contact">도입 문의</a>
+    </div>
   </div>
 </header>
 
 <main>
-  <div class="wrap hero">
-    <span class="tag">농수산물 위탁판매 전용</span>
-    <h1>주문 들어오면<br><em>발주부터 송장까지</em> 알아서.</h1>
-    <p class="lead">링클하우스는 오픈마켓에 들어온 농수산물 주문을 모아 공급사에 발주하고, 나온 송장을 다시 마켓에 넣어 주는 자동화 프로그램입니다. 판매자는 알림만 확인하면 됩니다.</p>
-    <div class="cta">
-      <a class="btn" href="#contact">도입 문의하기</a>
-      <a class="btn ghost" href="#features">기능 살펴보기</a>
-    </div>
-    <div class="markets">
-      <span class="label">지원 마켓</span>
-      <span class="chip">네이버 스마트스토어</span>
-      <span class="chip">롯데ON</span>
-      <span class="chip">11번가</span>
-      <span class="chip">토스쇼핑</span>
-      <span class="chip">테무</span>
+  <!-- 첫 화면 -->
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="tag">농수산물 위탁판매 전용 자동화</span>
+        <h1>주문부터 송장까지,<br><em>농수산물 판매를</em><br>알아서 굴립니다.</h1>
+        <p class="lead">오픈마켓 6곳에 들어온 주문을 모아 공급사에 발주하고, 송장을 다시 마켓에 넣습니다. 공급가가 오르면 판매가를 맞추고, 품절이면 판매를 멈춥니다. 판매자는 알림만 확인하면 됩니다.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">도입 문의하기</a>
+          <a class="btn ghost" href="#auto">어떻게 돌아가나요</a>
+        </div>
+        <div class="stats">
+          <div><b>6곳</b><span>연동 오픈마켓</span></div>
+          <div><b>30분</b><span>주문·품절 확인 주기</span></div>
+          <div><b>5가지</b><span>알아서 도는 자동화</span></div>
+        </div>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <div class="win">
+          <div class="bar"><i></i><i></i><i></i><span>오늘 들어온 주문</span></div>
+          <div class="rows">
+            <div class="r"><span class="mk n">스마트스토어</span><div>청송 부사 사과 5kg<small>가정용 · 1박스</small></div><span class="st ok">발주 완료</span></div>
+            <div class="r"><span class="mk t">토스쇼핑</span><div>제주 한라봉 3kg<small>선물용 · 2박스</small></div><span class="st go">송장 등록</span></div>
+            <div class="r"><span class="mk e">11번가</span><div>국산 손질 오징어 1kg<small>냉동 · 1박스</small></div><span class="st ok">발주 완료</span></div>
+            <div class="r"><span class="mk l">롯데ON</span><div>햅쌀 10kg<small>2026년산</small></div><span class="st wait">결제 대기</span></div>
+            <div class="r"><span class="mk k">톡스토어</span><div>성주 꿀참외 2kg<small>로얄과</small></div><span class="st ok">발주 완료</span></div>
+          </div>
+        </div>
+        <div class="toast">
+          <span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.7.4.9.9.9.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.4Z"/></svg></span>
+          <div><b>새 주문 5건 처리</b><span>발주 4건 완료 · 결제 대기 1건</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <section id="flow">
+  <!-- 마켓 -->
+  <div class="strip">
     <div class="wrap">
-      <h2>이렇게 돌아갑니다</h2>
-      <p class="sub">사람이 하던 반복 작업을 순서대로 대신합니다.</p>
-      <div class="flow">
-        <div class="step"><h3>상품 올리기</h3><p>공급사 상품을 골라 마켓별 규칙에 맞게 등록합니다.</p></div>
-        <div class="step"><h3>주문 모으기</h3><p>여러 마켓의 새 주문을 30분마다 한곳에 모읍니다.</p></div>
-        <div class="step"><h3>공급사 발주</h3><p>주문을 공급사 상품과 연결해 바로 발주합니다.</p></div>
-        <div class="step"><h3>송장 넣기</h3><p>공급사 송장이 나오면 각 마켓에 발송 처리합니다.</p></div>
-      </div>
+      <span class="label">연동 마켓</span>
+      <span class="chip"><i style="background:#03c75a"></i>네이버 스마트스토어</span>
+      <span class="chip"><i style="background:#f2c300"></i>카카오 톡스토어</span>
+      <span class="chip"><i style="background:#e60012"></i>롯데ON</span>
+      <span class="chip"><i style="background:#ff4a2b"></i>11번가</span>
+      <span class="chip"><i style="background:#3182f6"></i>토스쇼핑</span>
+      <span class="chip"><i style="background:#fb7701"></i>테무</span>
+      <span class="chip"><i style="background:var(--ink-3)"></i>도매 공급사 API</span>
     </div>
-  </section>
+  </div>
 
-  <section id="features">
+  <!-- 자동화 탭 -->
+  <section id="auto">
     <div class="wrap">
-      <h2>주요 기능</h2>
-      <p class="sub">하루 종일 마켓 관리자 화면을 오가던 일을 줄여 줍니다.</p>
-      <div class="grid">
-        <div class="card">
-          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div>
-          <h3>주문 수집 · 자동 발주</h3>
-          <p>마켓 5곳의 새 주문을 모아 발주 확인까지 하고, 연결된 공급사에 자동으로 발주합니다.</p>
-        </div>
-        <div class="card">
-          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="7" width="14" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
-          <h3>송장 자동 등록</h3>
-          <p>공급사 송장번호를 확인해 마켓마다 발송 처리합니다. 실패한 건만 따로 알려 드립니다.</p>
-        </div>
-        <div class="card">
-          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div>
-          <h3>공급가 감시 · 판매가 조정</h3>
-          <p>공급가와 배송비가 오르면 판매가를 맞춰 올려 손해 보는 판매를 막습니다.</p>
-        </div>
-        <div class="card">
-          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></div>
-          <h3>품절 감시</h3>
-          <p>공급사에서 품절되거나 판매가 끝난 상품은 마켓에서도 판매를 멈춥니다.</p>
-        </div>
-        <div class="card">
-          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg></div>
-          <h3>상품 등록 도우미</h3>
-          <p>상품명·검색 태그·카테고리를 AI가 잡고, 상세페이지까지 만들어 마켓별로 올립니다.</p>
-        </div>
-        <div class="card">
-          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <h3>문의 · 클레임 정리</h3>
-          <p>고객 문의를 종류별로 나누고 답변 초안을 만듭니다. 취소·반품도 한곳에서 봅니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <span class="eyebrow">AUTOMATION</span>
+      <h2>사람 손이 가던 일,<br>이제 알아서 돌아갑니다</h2>
+      <p class="sub">하루 종일 마켓 관리자 화면을 오가며 하던 반복 작업을 프로그램이 순서대로 처리합니다.</p>
 
-  <section id="why">
-    <div class="wrap">
-      <h2>왜 농수산물 전용인가요</h2>
-      <p class="sub">일반 쇼핑몰 도구로는 잘 안 맞는 부분을 처음부터 따로 만들었습니다.</p>
-      <div class="why">
-        <div class="row"><span class="ex">5kg · 10kg</span><div><b>무게 · 크기 · 등급 옵션</b><p>같은 사과라도 무게, 과수, 등급이 다릅니다. 이런 옵션을 마켓마다 맞는 모양으로 바꿔 올립니다.</p></div></div>
-        <div class="row"><span class="ex">제철</span><div><b>잦은 품절과 가격 변동</b><p>철 따라 공급이 끊기고 시세가 바뀝니다. 매일 공급사를 확인해 바로 반영합니다.</p></div></div>
-        <div class="row"><span class="ex">원산지</span><div><b>산지 · 원산지 표기</b><p>마켓마다 다른 상품 정보 고시 항목을 농수산물 기준으로 채워 둡니다.</p></div></div>
-        <div class="row"><span class="ex">선물세트</span><div><b>명절 선물세트</b><p>여러 품목이 섞인 세트도 구성 품목 기준으로 구분해 관리합니다.</p></div></div>
-      </div>
-    </div>
-  </section>
+      <div class="tabs" data-tabs>
+        <div class="tablist" role="tablist" aria-label="자동화 기능">
+          <button role="tab" id="t1" aria-controls="p1" aria-selected="true"><span class="n">1</span><div><b>주문 · 발주</b><span>6개 마켓 주문을 모아 공급사에 바로 발주</span></div></button>
+          <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><span class="n">2</span><div><b>송장 등록</b><span>공급사 송장을 마켓마다 발송 처리</span></div></button>
+          <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><span class="n">3</span><div><b>가격 감시</b><span>공급가가 오르면 판매가도 맞춰서</span></div></button>
+          <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><span class="n">4</span><div><b>품절 감시</b><span>공급사가 끊기면 마켓 판매도 중지</span></div></button>
+          <button role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1"><span class="n">5</span><div><b>문의 · 클레임</b><span>문의 분류와 답변 초안, 취소·반품 정리</span></div></button>
+        </div>
 
-  <section id="contact">
-    <div class="wrap">
-      <div class="status">
         <div>
-          <h2>지금은 직접 운영하며 다듬는 중입니다</h2>
-          <p>저희 농수산물 스토어를 이 프로그램으로 매일 운영하고 있습니다.<br>다른 판매자분들께 열기 전에 먼저 써 보고 싶으시면 연락 주세요.</p>
+          <div class="panel on" role="tabpanel" id="p1" aria-labelledby="t1">
+            <div>
+              <h3>주문이 들어오면<br>발주까지 바로</h3>
+              <p>30분마다 6개 마켓의 새 주문을 모읍니다. 발주 확인을 하고, 미리 연결해 둔 공급사 상품으로 자동 발주합니다.</p>
+              <ul class="ticks"><li>마켓마다 다른 주문 모양을 한 가지로 정리</li><li>옵션까지 공급사 상품과 1:1 연결</li><li>결제 대기 주문도 하루 종일 다시 확인</li></ul>
+            </div>
+            <div class="win" aria-hidden="true">
+              <div class="bar"><i></i><i></i><i></i><span>주문 처리 흐름</span></div>
+              <div class="rows">
+                <div class="r"><span class="st go">수집</span><div>새 주문 12건<small>6개 마켓</small></div><span class="st ok">완료</span></div>
+                <div class="r"><span class="st go">확인</span><div>발주 확인 · 상품 준비 중<small>마켓에 자동 표시</small></div><span class="st ok">완료</span></div>
+                <div class="r"><span class="st go">연결</span><div>공급사 상품 · 옵션 매칭<small>11건 연결 · 1건 확인 필요</small></div><span class="st wait">1건</span></div>
+                <div class="r"><span class="st go">발주</span><div>공급사 발주 11건<small>결제까지 처리</small></div><span class="st ok">완료</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2">
+            <div>
+              <h3>송장번호는<br>마켓에 알아서</h3>
+              <p>낮 시간(09~18시) 동안 30분마다 공급사 송장을 확인하고, 주문이 들어온 마켓에 택배사와 송장번호를 넣어 발송 처리합니다.</p>
+              <ul class="ticks"><li>마켓마다 다른 택배사 코드를 자동 변환</li><li>등록 완료·실패만 골라서 알림</li><li>실패한 건은 이유와 함께 따로 모아 보기</li></ul>
+            </div>
+            <div class="win" aria-hidden="true">
+              <div class="bar"><i></i><i></i><i></i><span>송장 등록</span></div>
+              <div class="rows">
+                <div class="r"><span class="mk n">스마트스토어</span><div>CJ대한통운<small>6890 **** 1123</small></div><span class="st ok">발송 처리</span></div>
+                <div class="r"><span class="mk m">테무</span><div>롯데택배<small>2541 **** 8830</small></div><span class="st ok">발송 처리</span></div>
+                <div class="r"><span class="mk l">롯데ON</span><div>우체국택배<small>6091 **** 4471</small></div><span class="st ok">발송 처리</span></div>
+                <div class="r"><span class="mk t">토스쇼핑</span><div>한진택배<small>공급사 송장 대기</small></div><span class="st wait">대기</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3">
+            <div>
+              <h3>공급가가 오르면<br>판매가도 같이</h3>
+              <p>매일 공급사 가격을 확인합니다. 원가(공급가 + 배송비)가 올라 마진이 모자라면 연결된 모든 마켓의 판매가를 올립니다.</p>
+              <ul class="ticks"><li>올리기만 하고, 마음대로 내리지 않음</li><li>옵션별 가격까지 각각 계산</li><li>심사가 필요한 마켓(테무)은 심사 결과까지 확인</li></ul>
+            </div>
+            <div class="win" aria-hidden="true">
+              <div class="bar"><i></i><i></i><i></i><span>공급가 감시</span></div>
+              <div class="rows">
+                <div class="r"><span class="st wait">↑ 1,500원</span><div>꿀사과 5kg 공급가 인상<small>원가 24,500원 → 26,000원</small></div><span class="st ok">5곳 반영</span></div>
+                <div class="r"><span class="st wait">↑ 800원</span><div>한라봉 3kg 배송비 인상<small>마진 하한 미달</small></div><span class="st ok">6곳 반영</span></div>
+                <div class="r"><span class="st go">변동 없음</span><div>나머지 214개 상품<small>오늘 09:00 확인</small></div><span class="st ok">유지</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4">
+            <div>
+              <h3>공급사가 품절되면<br>마켓도 바로 멈춤</h3>
+              <p>30분마다 공급사 재고와 판매 상태를 확인합니다. 품절이나 판매 종료가 보이면 연결된 마켓에서 판매를 중지하고, 다시 들어오면 되살립니다.</p>
+              <ul class="ticks"><li>없는 상품이 팔려서 생기는 취소·페널티 예방</li><li>옵션 하나만 품절이어도 그 옵션만 중지</li><li>공급사 하루 호출 한도를 아껴 쓰도록 조절</li></ul>
+            </div>
+            <div class="win" aria-hidden="true">
+              <div class="bar"><i></i><i></i><i></i><span>품절 감시</span></div>
+              <div class="rows">
+                <div class="r"><span class="st wait">품절</span><div>햇 감귤 10kg (대과)<small>공급사 품절</small></div><span class="st ok">6곳 중지</span></div>
+                <div class="r"><span class="st wait">종료</span><div>여름 수박 8kg<small>공급사 판매 종료</small></div><span class="st ok">4곳 중지</span></div>
+                <div class="r"><span class="st go">재입고</span><div>샤인머스캣 2kg<small>공급사 판매 재개</small></div><span class="st ok">다시 판매</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5">
+            <div>
+              <h3>문의와 클레임도<br>한 곳에서</h3>
+              <p>마켓마다 흩어진 고객 문의를 모아 배송·상품·교환 같은 종류로 나누고, 주문 정보를 보고 답변 초안을 만들어 둡니다.</p>
+              <ul class="ticks"><li>AI가 주문·배송 상태를 보고 답변 초안 작성</li><li>판매자는 확인하고 보내기만</li><li>취소·반품·교환 요청을 마켓 상관없이 한 목록에</li></ul>
+            </div>
+            <div class="win" aria-hidden="true">
+              <div class="bar"><i></i><i></i><i></i><span>고객 문의</span></div>
+              <div class="rows">
+                <div class="r"><span class="st go">배송</span><div>"언제 받을 수 있나요?"<small>초안: 오늘 출고, 송장 6890…</small></div><span class="st ok">초안</span></div>
+                <div class="r"><span class="st go">상품</span><div>"선물 포장 되나요?"<small>초안: 선물용 옵션 안내</small></div><span class="st ok">초안</span></div>
+                <div class="r"><span class="st wait">반품</span><div>배송 중 파손 접수<small>사진 확인 필요</small></div><span class="st wait">확인</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상품 등록 -->
+  <section id="listing" style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">AI LISTING</span>
+        <h2>팔 상품 고르기부터<br>6개 마켓 등록까지</h2>
+        <p class="sub">공급사 상품 중 올릴 것을 골라 주고, 상품명·상세페이지를 AI가 만들어 마켓 규칙에 맞게 올립니다.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>자동 담기 — 올릴 상품 골라 주기</h3>
+          <p>공급사 상품을 6시간마다 살펴 새 후보를 찾습니다. 여러 공급사의 같은 상품은 하나로 묶고, 품위(선물·가정용·못난이)를 읽어 내 스토어 상품과 나란히 비교해 보여 줍니다.</p>
+          <div class="mock" aria-hidden="true">
+            <div class="pick"><span class="thumb">🍎</span><div><b>청송 부사 5kg</b><span class="grade g1">선물</span><br><small style="color:var(--ink-3)">공급사 2곳 · 최저 21,900원</small></div><span class="st ok">후보</span></div>
+            <div class="pick"><span class="thumb">🍊</span><div><b>제주 감귤 10kg</b><span class="grade g3">못난이</span><br><small style="color:var(--ink-3)">공급사 1곳 · 14,500원</small></div><span class="st ok">후보</span></div>
+            <div class="pick"><span class="thumb">🍇</span><div><b>샤인머스캣 2kg</b><span class="grade g2">가정용</span><br><small style="color:var(--ink-3)">내 스토어에 이미 있음</small></div><span class="st wait">비교</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>AI 상품명 · 검색 태그</h3>
+          <p>네이버 검색광고의 연관 키워드와 검색량을 보고, 많이 찾는 말을 넣어 상품명과 태그를 만듭니다. 마켓별 카테고리도 AI가 골라 줍니다.</p>
+          <div class="mock" aria-hidden="true">
+            <div class="name">청송 꿀사과 부사 5kg 가정용 제철 산지직송</div>
+            <div class="kw"><span>꿀사과<b>8.1만</b></span><span>부사 사과<b>2.4만</b></span><span>청송사과<b>1.9만</b></span><span>사과 5kg<b>1.2만</b></span><span>산지직송 사과<b>6천</b></span></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>상세페이지 자동 제작</h3>
+          <p>공급사 사진으로 상세페이지를 만들고, 상단·하단 고정 이미지를 모든 상품에 한 번에 넣습니다. 같은 사진이 두 번 들어가면 찾아서 빼 줍니다.</p>
+          <div class="mock" aria-hidden="true">
+            <div class="detail"><div class="fix">상단 고정</div><div>산지 사진</div><div class="x">중복 사진</div><div>크기 비교</div><div>포장 사진</div><div>보관 방법</div><div>원산지 표기</div><div class="fix">하단 고정</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>6개 마켓 한 번에 등록</h3>
+          <p>한 번 만든 상품을 마켓마다 다른 옵션 모양, 필수 고시 항목, 배송 설정에 맞게 바꿔 올립니다. 예약해 두면 서버가 차례로 처리합니다.</p>
+          <div class="mock" aria-hidden="true">
+            <div class="mk-row" style="margin-bottom:12px"><span class="mk n">스마트스토어</span><span class="mk k">톡스토어</span><span class="mk l">롯데ON</span><span class="mk e">11번가</span><span class="mk t">토스쇼핑</span><span class="mk m">테무</span></div>
+            <div class="r" style="border:0;padding:0"><span class="st ok">반영 5</span><div>청송 부사 5kg 등록 예약<small>테무는 심사 중 · 결과 나오면 자동 확인</small></div><span class="st go">심사 1</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 농수산물이라서 -->
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">WHY PRODUCE</span>
+      <h2>농수산물은<br>일반 상품과 다릅니다</h2>
+      <p class="sub">일반 쇼핑몰 프로그램으로는 잘 안 맞는 부분을, 처음부터 농수산물에 맞춰 만들었습니다.</p>
+      <div class="why">
+        <div><span class="ex">3kg · 5kg · 10kg</span><b>무게 · 크기 · 과수 옵션</b><p>같은 사과도 무게, 과수, 크기가 제각각입니다. 이 옵션을 마켓마다 맞는 모양으로 바꿔 올립니다.</p></div>
+        <div><span class="ex">선물 · 가정용 · 못난이</span><b>품위 구분</b><p>공급사 설명을 읽어 품위를 나누고, 같은 값이면 더 좋은 등급을 보내도록 고릅니다.</p></div>
+        <div><span class="ex">제철</span><b>잦은 품절과 시세 변동</b><p>철 따라 공급이 끊기고 가격이 움직입니다. 30분·하루 단위로 확인해 바로 반영합니다.</p></div>
+        <div><span class="ex">원산지 · 생산연도</span><b>상품 정보 고시</b><p>마켓마다 다른 필수 고시 항목을 농수산물 기준 값으로 채워 둡니다.</p></div>
+        <div><span class="ex">명절 선물세트</span><b>세트는 구성품으로</b><p>한우 세트와 곶감 세트를 헷갈리지 않게, 세트 안의 구성 품목으로 비교하고 나눕니다.</p></div>
+        <div><span class="ex">쌀 · 김치 · 수산</span><b>품목별 규칙</b><p>쌀은 산지·브랜드로, 김치는 종류로, 수산물은 손질·냉동 여부로 같은 상품인지 가립니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 가격 -->
+  <section id="price">
+    <div class="wrap price">
+      <div>
+        <span class="eyebrow">PRICING RULE</span>
+        <h2>손해 보는 판매가<br>생기지 않게</h2>
+        <p class="sub" style="margin-bottom:24px">원가에 공급사 배송비까지 넣어 계산합니다. 마켓 수수료와 광고비를 빼고도 남는 실마진을 기준으로 판매가를 정합니다.</p>
+        <ul class="ticks"><li>원가 = 공급가 + 공급사 배송비(1박스)</li><li>마켓별 수수료, 상품별 광고비까지 반영한 실마진 계산</li><li>원가가 오르면 올리고, 내려도 판매가는 그대로</li></ul>
+      </div>
+      <div class="calc" aria-hidden="true">
+        <div class="line"><span>공급가</span><b>21,900원</b></div>
+        <div class="line"><span>공급사 배송비 (1박스)</span><b>+ 3,500원</b></div>
+        <div class="line"><span>마켓 수수료 · 광고비</span><b>+ 4,100원</b></div>
+        <div class="line"><span>목표 마진</span><b>+ 3,000원</b></div>
+        <div class="line sum"><span>판매가</span><b>32,500원</b></div>
+        <div class="rule"><div class="up">원가 오름 → 판매가 올림</div><div class="keep">원가 내림 → 그대로 유지</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 하루 흐름 -->
+  <section id="day" style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">ONE DAY</span>
+        <h2>판매자가 쉬는 동안에도</h2>
+        <p class="sub">서버가 정해진 시간마다 알아서 일하고, 결과는 텔레그램으로 알려 줍니다.</p>
+      </div>
+      <div class="day">
+        <div><span class="t">매일 09:00</span><b>아침 요약 · 공급가 확인</b><p>최근 24시간 주문 건수를 보내고, 공급가 변동을 확인합니다.</p></div>
+        <div><span class="t">30분마다</span><b>주문 · 품절 확인</b><p>새 주문 발주, 결제 대기 재확인, 공급사 품절 반영.</p></div>
+        <div><span class="t">09~18시</span><b>송장 등록</b><p>공급사 송장을 마켓에 넣고 완료·실패만 알림.</p></div>
+        <div><span class="t">1시간마다</span><b>심사 결과 확인</b><p>심사가 필요한 마켓의 가격·상품 승인을 확인합니다.</p></div>
+        <div><span class="t">6시간마다</span><b>새 상품 후보</b><p>공급사에 새로 나온 상품을 찾아 후보로 올립니다.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 문의 -->
+  <section id="contact" style="padding-top:96px">
+    <div class="wrap final" style="padding-bottom:0">
+      <div class="box">
+        <div>
+          <h2>지금은 직접 운영하며 다듬고 있습니다</h2>
+          <p>저희 농수산물 스토어를 이 프로그램으로 매일 운영하고 있습니다. 다른 판매자분들께 열기 전에 먼저 써 보고 싶으시면 연락 주세요.</p>
         </div>
         <a class="btn" href="mailto:support@linklehouse.xyz">support@linklehouse.xyz</a>
       </div>
@@ -122,8 +298,9 @@
 <footer>
   <div class="wrap">
     <span>© 2026 링클하우스 (Linkle House)</span>
-    <span>농수산물 발주 자동화</span>
+    <span>농수산물 발주 자동화 · 대한민국</span>
   </div>
 </footer>
+<script src="/site.js"></script>
 </body>
 </html>
