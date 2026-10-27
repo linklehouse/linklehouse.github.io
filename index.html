@@ -1,301 +1,123 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Linkle House | Order Automation for Fresh Produce</title>
-<meta name="description" content="Order automation built for Korean farm and seafood sellers. Collects orders from six Korean marketplaces, places them with suppliers, syncs tracking numbers, keeps prices and stock in line, and lists new products with AI.">
-<meta property="og:title" content="Linkle House | Order Automation for Fresh Produce">
-<meta property="og:description" content="From order intake to supplier purchasing, shipping updates, price and stock sync, and AI listing — across six Korean marketplaces.">
-<meta property="og:url" content="https://linklehouse.xyz/">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2314834f'/%3E%3Cstop offset='1' stop-color='%230e9f8a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='9' fill='url(%23g)'/%3E%3Cpath d='M8 21c0-7 6-12 16-12-1 9-6 14-13 14-1 0-2 0-3-2z' fill='%23fff'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-<link rel="stylesheet" href="style.css">
-<link rel="canonical" href="https://linklehouse.xyz/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#168568">
+  <meta name="description" content="공급사 상품 선택부터 AI 상품명·상세페이지 준비, 여러 마켓 등록과 주문·발주 관리까지. 반복되는 판매 업무를 링클하우스에서 이어가세요.">
+  <title>링클하우스 — 상품을 담으면, 판매 준비가 시작됩니다</title>
+  <link rel="canonical" href="https://linklehouse.xyz/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="링클하우스 — 상품을 담으면, 판매 준비가 시작됩니다">
+  <meta property="og:description" content="공급사 상품 선택부터 마켓 등록, 주문·발주 관리까지. 판매 업무를 한곳에서 이어가세요.">
+  <meta property="og:url" content="https://linklehouse.xyz/">
+  <meta property="og:image" content="https://linklehouse.xyz/assets/linklehouse-jade.png">
+  <link rel="icon" href="assets/linklehouse-jade.png">
+  <link rel="stylesheet" href="style.css?v=20261027">
+  <script src="site.js?v=20261027" defer></script>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="./"><i><svg width="17" height="17" viewBox="0 0 32 32"><path d="M5 22c0-9 7-15 22-15-1 12-8 18-17 18-2 0-4 0-5-3z" fill="#fff"/></svg></i>Linkle House</a>
-    <div class="right">
-      <nav><a href="#auto">Automation</a><a href="#listing">Listing</a><a href="#price">Pricing</a><a href="#day">Daily run</a></nav>
-      <a class="btn sm" href="#contact">Contact</a>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m3 7 9-4 9 4-9 4-9-4Zm0 0v10l9 4 9-4V7M12 11v10M7.5 5l9 4"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4L12 3Z"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9v11h16V9M3 9l2-6h14l2 6M3 9c0 4 6 4 6 0 0 4 6 4 6 0 0 4 6 4 6 0M9 20v-6h6v6"/></symbol>
+    <symbol id="i-orders" viewBox="0 0 24 24"><path d="M6 4h12v17H6zM9 4V2h6v2M9 9h6M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M5 17h14l-2-3V9a5 5 0 0 0-10 0v5l-2 3Zm5 3h4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 6 8 7 8-7"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><path d="M5 5h14v5M19 10l-4-4m4 4 4-4M19 19H5v-5M5 14l-4 4m4-4 4 4"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="링클하우스 처음으로"><span class="brand-symbol"><img src="assets/linklehouse-jade.png" alt="" width="56" height="56"></span><span>링클하우스<small>LINKLE HOUSE</small></span></a>
+      <nav class="desktop-nav" aria-label="주 메뉴"><a href="#features">주요 기능</a><a href="#workflow">이용 흐름</a><a href="#markets">연동 마켓</a><a href="#guide">이용 안내</a></nav>
+      <div class="header-actions"><button class="login-link" data-login>로그인 <span aria-hidden="true">↗</span></button><a class="button button-small" href="#contact">이용 문의</a><button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span></button></div>
     </div>
-  </div>
-</header>
+    <nav class="mobile-menu" id="mobile-menu" aria-label="모바일 메뉴" hidden><a href="#features">주요 기능</a><a href="#workflow">이용 흐름</a><a href="#markets">연동 마켓</a><a href="#guide">이용 안내</a></nav>
+  </header>
 
-<main>
-  <div class="hero">
-    <div class="wrap">
-      <div>
-        <span class="tag">Automation for fresh produce sellers in Korea</span>
-        <h1>Fresh produce orders,<br><em>purchased and shipped</em><br>on their own.</h1>
-        <p class="lead">Linkle House gathers orders from six Korean marketplaces, places them with the right supplier, and posts tracking numbers back. When supplier costs rise it raises prices to match; when stock runs out it pauses the listing. Sellers just read the notifications.</p>
-        <div class="cta">
-          <a class="btn" href="#contact">Get in touch</a>
-          <a class="btn ghost" href="#auto">How it works</a>
-        </div>
-        <div class="stats">
-          <div><b>6</b><span>marketplaces connected</span></div>
-          <div><b>30 min</b><span>order &amp; stock check cycle</span></div>
-          <div><b>5</b><span>automations running</span></div>
-        </div>
-      </div>
-
-      <div class="stage" aria-hidden="true">
-        <div class="win">
-          <div class="bar"><i></i><i></i><i></i><span>Today's orders</span></div>
-          <div class="rows">
-            <div class="r"><span class="mk n">Smart Store</span><div>Cheongsong Fuji apples 5kg<small>Home grade · 1 box</small></div><span class="st ok">Ordered</span></div>
-            <div class="r"><span class="mk t">Toss</span><div>Jeju Hallabong 3kg<small>Gift grade · 2 boxes</small></div><span class="st go">Shipped</span></div>
-            <div class="r"><span class="mk e">11st</span><div>Cleaned Korean squid 1kg<small>Frozen · 1 box</small></div><span class="st ok">Ordered</span></div>
-            <div class="r"><span class="mk l">Lotte ON</span><div>New-crop rice 10kg<small>2026 harvest</small></div><span class="st wait">Awaiting pay</span></div>
-            <div class="r"><span class="mk k">TalkStore</span><div>Seongju melons 2kg<small>Premium size</small></div><span class="st ok">Ordered</span></div>
-          </div>
-        </div>
-        <div class="toast">
-          <span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M21.5 4.3 2.9 11.5c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.7.4.9.9.9.4 0 .6-.2.9-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.1-14.7c.3-1.3-.5-1.9-1.5-1.4Z"/></svg></span>
-          <div><b>5 new orders handled</b><span>4 ordered from suppliers · 1 awaiting payment</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="strip">
-    <div class="wrap">
-      <span class="label">Marketplaces</span>
-      <span class="chip"><i style="background:#03c75a"></i>Naver Smart Store</span>
-      <span class="chip"><i style="background:#f2c300"></i>Kakao TalkStore</span>
-      <span class="chip"><i style="background:#e60012"></i>Lotte ON</span>
-      <span class="chip"><i style="background:#ff4a2b"></i>11st</span>
-      <span class="chip"><i style="background:#3182f6"></i>Toss Shopping</span>
-      <span class="chip"><i style="background:#fb7701"></i>Temu</span>
-      <span class="chip"><i style="background:var(--ink-3)"></i>Wholesale supplier API</span>
-    </div>
-  </div>
-
-  <section id="auto">
-    <div class="wrap">
-      <span class="eyebrow">AUTOMATION</span>
-      <h2>The work that took hands<br>now runs on its own</h2>
-      <p class="sub">The repetitive clicks across marketplace admin pages, handled in order by the system.</p>
-
-      <div class="tabs" data-tabs>
-        <div class="tablist" role="tablist" aria-label="Automations">
-          <button role="tab" id="t1" aria-controls="p1" aria-selected="true"><span class="n">1</span><div><b>Orders &amp; purchasing</b><span>Collect orders from six markets and order from suppliers</span></div></button>
-          <button role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1"><span class="n">2</span><div><b>Tracking sync</b><span>Post supplier tracking numbers to every market</span></div></button>
-          <button role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1"><span class="n">3</span><div><b>Cost watch</b><span>Raise selling prices when supplier costs rise</span></div></button>
-          <button role="tab" id="t4" aria-controls="p4" aria-selected="false" tabindex="-1"><span class="n">4</span><div><b>Stock watch</b><span>Pause listings when suppliers sell out</span></div></button>
-          <button role="tab" id="t5" aria-controls="p5" aria-selected="false" tabindex="-1"><span class="n">5</span><div><b>Inquiries &amp; claims</b><span>Sort questions, draft replies, track returns</span></div></button>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="tiny-house">⌂</span> 판매 업무가 이어지는 곳, 링클하우스</span>
+          <h1 id="hero-title">상품을 담으면,<br><span>판매 준비가</span><br>시작됩니다.</h1>
+          <p class="hero-description">공급사 상품 선택부터 AI 상품명·상세페이지 준비,<br class="desktop-break"> 여러 마켓 등록과 주문·발주 관리까지.<br>매일 반복되는 판매 업무를 한곳에서 이어가세요.</p>
+          <div class="hero-buttons"><a class="button" href="#features">주요 기능 살펴보기 <svg class="icon"><use href="#i-arrow"/></svg></a><a class="text-button" href="#contact">이용 문의 <span>↗</span></a></div>
+          <div class="hero-notes"><span><svg class="icon"><use href="#i-check"/></svg>AI로 등록 준비</span><span><svg class="icon"><use href="#i-check"/></svg>여러 마켓을 한곳에서</span></div>
         </div>
 
-        <div>
-          <div class="panel on" role="tabpanel" id="p1" aria-labelledby="t1">
-            <div>
-              <h3>An order arrives,<br>the supplier gets it</h3>
-              <p>Every 30 minutes new orders are pulled from six marketplaces, confirmed, and purchased from the linked supplier product automatically.</p>
-              <ul class="ticks"><li>Every marketplace's order format unified into one</li><li>Options matched one-to-one with supplier products</li><li>Unpaid orders re-checked throughout the day</li></ul>
-            </div>
-            <div class="win" aria-hidden="true">
-              <div class="bar"><i></i><i></i><i></i><span>Order pipeline</span></div>
-              <div class="rows">
-                <div class="r"><span class="st go">Collect</span><div>12 new orders<small>6 marketplaces</small></div><span class="st ok">Done</span></div>
-                <div class="r"><span class="st go">Confirm</span><div>Marked as preparing<small>Updated on each market</small></div><span class="st ok">Done</span></div>
-                <div class="r"><span class="st go">Match</span><div>Supplier product &amp; option<small>11 matched · 1 to review</small></div><span class="st wait">1</span></div>
-                <div class="r"><span class="st go">Purchase</span><div>11 supplier orders<small>Including payment</small></div><span class="st ok">Done</span></div>
+        <div class="hero-stage">
+          <div class="stage-caption"><span class="live-dot"></span> 이렇게 판매 준비가 이어집니다 <span class="example-tag">기능 예시</span></div>
+          <div class="app-window">
+            <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>링클하우스 · 자동 등록</span><svg class="icon"><use href="#i-spark"/></svg></div>
+            <div class="app-body">
+              <div class="app-heading"><div><span class="micro-label">SELLER WORKSPACE</span><h2>판매할 상품을 담아보세요</h2></div><span class="badge badge-soft">공급사 연결</span></div>
+              <div class="demo-steps" aria-label="등록 준비 단계"><span class="active" data-stage="0">상품 선택</span><i></i><span data-stage="1">AI 등록 준비</span><i></i><span data-stage="2">마켓 등록</span></div>
+              <div class="hero-demo-panel" id="hero-demo-panel">
+                <div class="demo-product"><img src="assets/pear-product.jpg" alt="배 선물세트 상품 예시" width="112" height="112"><div><span class="badge badge-warm">공급사 상품</span><h3>나주 배 선물세트</h3><p>3kg · 5kg 옵션</p><span class="product-note"><svg class="icon"><use href="#i-check"/></svg>상품 사진·상세페이지 연결</span></div><span class="selected-check" aria-hidden="true">✓</span></div>
+                <div class="preparation-list"><div><span><svg class="icon"><use href="#i-spark"/></svg>검색 키워드로 상품명 준비</span><b>AI 준비</b></div><div><span><svg class="icon"><use href="#i-box"/></svg>사진·옵션·상세페이지 연결</span><b>자료 연결</b></div><div><span><svg class="icon"><use href="#i-store"/></svg>연결한 마켓에 등록</span><b>순서대로</b></div></div>
               </div>
+              <button class="demo-run" id="demo-run"><span>등록 준비 미리보기</span><svg class="icon"><use href="#i-arrow"/></svg></button>
+              <p class="demo-disclaimer" id="demo-disclaimer">예시 화면입니다. 실제 상품은 등록되지 않습니다.</p>
             </div>
           </div>
-
-          <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2">
-            <div>
-              <h3>Tracking numbers<br>go where they belong</h3>
-              <p>From 9am to 6pm, supplier tracking numbers are checked every 30 minutes and posted with the courier to the marketplace the order came from.</p>
-              <ul class="ticks"><li>Courier codes translated per marketplace</li><li>Only completions and failures are notified</li><li>Failures collected with the reason</li></ul>
-            </div>
-            <div class="win" aria-hidden="true">
-              <div class="bar"><i></i><i></i><i></i><span>Tracking sync</span></div>
-              <div class="rows">
-                <div class="r"><span class="mk n">Smart Store</span><div>CJ Logistics<small>6890 **** 1123</small></div><span class="st ok">Shipped</span></div>
-                <div class="r"><span class="mk m">Temu</span><div>Lotte Global<small>2541 **** 8830</small></div><span class="st ok">Shipped</span></div>
-                <div class="r"><span class="mk l">Lotte ON</span><div>Korea Post<small>6091 **** 4471</small></div><span class="st ok">Shipped</span></div>
-                <div class="r"><span class="mk t">Toss</span><div>Hanjin<small>Waiting for supplier</small></div><span class="st wait">Waiting</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3">
-            <div>
-              <h3>Supplier costs up,<br>selling prices follow</h3>
-              <p>Supplier prices are checked daily. If cost (supplier price + shipping) rises past the margin, prices are raised on every linked marketplace.</p>
-              <ul class="ticks"><li>Prices only go up — never cut on their own</li><li>Calculated per option</li><li>Marketplaces with price review (Temu) are followed through approval</li></ul>
-            </div>
-            <div class="win" aria-hidden="true">
-              <div class="bar"><i></i><i></i><i></i><span>Cost watch</span></div>
-              <div class="rows">
-                <div class="r"><span class="st wait">↑ ₩1,500</span><div>Apples 5kg supplier price up<small>Cost ₩24,500 → ₩26,000</small></div><span class="st ok">5 updated</span></div>
-                <div class="r"><span class="st wait">↑ ₩800</span><div>Hallabong 3kg shipping up<small>Below margin floor</small></div><span class="st ok">6 updated</span></div>
-                <div class="r"><span class="st go">No change</span><div>All other products<small>Checked 09:00 today</small></div><span class="st ok">Kept</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4">
-            <div>
-              <h3>Supplier sells out,<br>the listing pauses</h3>
-              <p>Supplier stock and status are checked every 30 minutes. Sold-out or discontinued items are paused on every marketplace, and restored when they come back.</p>
-              <ul class="ticks"><li>Prevents cancellations and penalties from phantom stock</li><li>Pauses only the sold-out option</li><li>Paced to respect supplier daily API limits</li></ul>
-            </div>
-            <div class="win" aria-hidden="true">
-              <div class="bar"><i></i><i></i><i></i><span>Stock watch</span></div>
-              <div class="rows">
-                <div class="r"><span class="st wait">Sold out</span><div>Tangerines 10kg (large)<small>Supplier out of stock</small></div><span class="st ok">6 paused</span></div>
-                <div class="r"><span class="st wait">Ended</span><div>Summer watermelon 8kg<small>Supplier discontinued</small></div><span class="st ok">4 paused</span></div>
-                <div class="r"><span class="st go">Back</span><div>Shine Muscat 2kg<small>Supplier restocked</small></div><span class="st ok">Selling</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel" role="tabpanel" id="p5" aria-labelledby="t5">
-            <div>
-              <h3>Inquiries and claims<br>in one place</h3>
-              <p>Customer questions from every marketplace are gathered, sorted by type, and given a draft reply based on the order and shipping status.</p>
-              <ul class="ticks"><li>AI drafts replies using order details</li><li>Sellers review and send</li><li>Cancellations, returns and exchanges in one list</li></ul>
-            </div>
-            <div class="win" aria-hidden="true">
-              <div class="bar"><i></i><i></i><i></i><span>Customer inquiries</span></div>
-              <div class="rows">
-                <div class="r"><span class="st go">Shipping</span><div>"When will it arrive?"<small>Draft: shipped today, tracking 6890…</small></div><span class="st ok">Draft</span></div>
-                <div class="r"><span class="st go">Product</span><div>"Can you gift-wrap it?"<small>Draft: gift option info</small></div><span class="st ok">Draft</span></div>
-                <div class="r"><span class="st wait">Return</span><div>Damaged in transit<small>Photo review needed</small></div><span class="st wait">Review</span></div>
-              </div>
-            </div>
-          </div>
+          <div class="floating-note"><span class="note-icon"><svg class="icon"><use href="#i-check"/></svg></span><div><b>담은 상품이 다음 단계로</b><span>상품 선택부터 등록 준비까지 연결</span></div><span class="small-star" aria-hidden="true">✦</span></div>
+          <div class="stage-footer">상품 준비에 쓰던 시간, 조금 더 가볍게.</div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="listing" style="background:var(--bg-2)">
-    <div class="wrap">
-      <div class="center">
-        <span class="eyebrow">AI LISTING</span>
-        <h2>From picking products<br>to listing on six markets</h2>
-        <p class="sub">It suggests which supplier products to sell, writes names and detail pages with AI, and lists them following each marketplace's rules.</p>
+    <section class="market-strip" aria-label="지원 마켓"><div class="container market-strip-inner"><span class="strip-label">여러 마켓의 판매 업무를<br><b>하나의 작업 공간에서</b></span><div class="market-names"><span class="market-naver"><b>N</b> 스마트스토어</span><span class="market-toss">toss <small>쇼핑</small></span><span class="market-eleven">11<span>번가</span></span><span class="market-lotte">LOTTE <b>ON</b></span></div></div></section>
+
+    <section class="workflow section" id="workflow">
+      <div class="container">
+        <div class="section-heading horizontal-heading"><div><span class="eyebrow">일을 하나씩, 자연스럽게</span><h2>고르는 순간부터<br>주문이 들어온 다음까지.</h2></div><p>여러 화면을 오가며 하던 일들을<br>하나의 흐름으로 이어갑니다.</p></div>
+        <div class="flow-line"><article><span class="step-number">01</span><svg class="flow-icon"><use href="#i-box"/></svg><h3>상품 담기</h3><p>공급사 상품을 살펴보고<br>판매할 상품과 옵션 선택</p></article><article><span class="step-number">02</span><svg class="flow-icon"><use href="#i-spark"/></svg><h3>등록 준비</h3><p>AI 상품명과 카테고리,<br>사진·상세페이지 준비</p></article><article><span class="step-number">03</span><svg class="flow-icon"><use href="#i-store"/></svg><h3>마켓 등록</h3><p>연결한 마켓에 맞춰<br>상품 등록과 결과 확인</p></article><article><span class="step-number">04</span><svg class="flow-icon"><use href="#i-orders"/></svg><h3>주문·발주 관리</h3><p>주문을 모아 확인하고<br>공급사 발주·배송까지 연결</p></article></div>
       </div>
-      <div class="cards">
-        <div class="card">
-          <h3>Auto-pick: what to sell next</h3>
-          <p>Supplier catalogs are scanned every 6 hours for new candidates. The same product from different suppliers is grouped, quality grade is read from the description, and each is shown next to your existing listing.</p>
-          <div class="mock" aria-hidden="true">
-            <div class="pick"><span class="thumb">🍎</span><div><b>Fuji apples 5kg</b><span class="grade g1">Gift</span><br><small style="color:var(--ink-3)">2 suppliers · from ₩21,900</small></div><span class="st ok">New</span></div>
-            <div class="pick"><span class="thumb">🍊</span><div><b>Jeju tangerines 10kg</b><span class="grade g3">Ugly</span><br><small style="color:var(--ink-3)">1 supplier · ₩14,500</small></div><span class="st ok">New</span></div>
-            <div class="pick"><span class="thumb">🍇</span><div><b>Shine Muscat 2kg</b><span class="grade g2">Home</span><br><small style="color:var(--ink-3)">Already in your store</small></div><span class="st wait">Compare</span></div>
-          </div>
+    </section>
+
+    <section class="feature-section section" id="features">
+      <div class="container">
+        <div class="section-heading centered"><span class="eyebrow">반복하는 일은 줄이고, 중요한 일은 가까이</span><h2>매일 쓰는 기능을<br>한곳에 모았습니다.</h2></div>
+        <div class="feature-tabs" role="tablist" aria-label="주요 기능"><button role="tab" id="tab-prepare" aria-controls="panel-prepare" aria-selected="true" data-feature="prepare"><svg class="icon"><use href="#i-spark"/></svg>상품 준비·등록</button><button role="tab" id="tab-orders" aria-controls="panel-orders" aria-selected="false" tabindex="-1" data-feature="orders"><svg class="icon"><use href="#i-orders"/></svg>주문·발주 관리</button><button role="tab" id="tab-review" aria-controls="panel-review" aria-selected="false" tabindex="-1" data-feature="review"><svg class="icon"><use href="#i-bell"/></svg>보류·알림 확인</button></div>
+
+        <div class="feature-panel" id="panel-prepare" role="tabpanel" aria-labelledby="tab-prepare">
+          <div class="feature-copy"><span class="section-index">01 / 상품 준비·등록</span><h3>무엇을 팔지 고르면,<br>등록 준비가 이어집니다.</h3><p>공급사 상품과 운영 중인 스토어의 유사 상품을 함께 살펴보세요. 원하는 옵션을 담으면 AI 상품명부터 사진·상세페이지 준비까지 이어집니다.</p><ul class="check-list"><li>검색 키워드를 활용한 상품명·태그 준비</li><li>상품 사진과 공급사 상세페이지 연결</li><li>마켓별 카테고리와 옵션 형식에 맞춰 등록</li></ul><a class="inline-link" href="#guide">등록 과정 더 알아보기 <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          <div class="feature-visual prepare-visual"><div class="mini-topline"><b>자동 담기</b><span class="example-tag">기능 예시</span></div><div class="compare-labels"><span>공급사 상품</span><span>운영 중인 스토어</span></div><div class="compare-product"><div class="supplier-side"><img src="assets/pear-product.jpg" alt="공급사 배 상품 예시" width="92" height="92" loading="lazy"><div><h4>나주 배 선물세트</h4><p>3kg · 5kg 옵션</p><span class="badge badge-soft">상세페이지 연결</span></div></div><div class="store-side"><span class="compare-mark">↔</span><span>비슷한 상품을<br>함께 비교하세요</span></div></div><div class="name-preview"><div><svg class="icon"><use href="#i-spark"/></svg><b>AI 상품명 준비</b><span>예시</span></div><p>나주 배 선물세트 3kg 5kg</p><div class="keyword-tags"><span>#나주배</span><span>#배선물세트</span><span>#과일선물</span></div></div><div class="visual-bottom"><span><svg class="icon"><use href="#i-check"/></svg>고른 상품과 옵션으로 준비</span><span>등록 예약 <svg class="icon"><use href="#i-arrow"/></svg></span></div></div>
         </div>
-        <div class="card">
-          <h3>AI product names &amp; tags</h3>
-          <p>Names and tags are built from Naver search ad keywords and their search volume, so they use the words shoppers actually type. AI also picks the category on each marketplace.</p>
-          <div class="mock" aria-hidden="true">
-            <div class="name">Cheongsong Honey Fuji Apples 5kg · Home Grade · In Season · Farm Direct</div>
-            <div class="kw"><span>honey apple<b>81k</b></span><span>fuji apple<b>24k</b></span><span>cheongsong apple<b>19k</b></span><span>apple 5kg<b>12k</b></span><span>farm direct apple<b>6k</b></span></div>
-          </div>
+
+        <div class="feature-panel" id="panel-orders" role="tabpanel" aria-labelledby="tab-orders" hidden>
+          <div class="feature-copy"><span class="section-index">02 / 주문·발주 관리</span><h3>마켓마다 들어온 주문,<br>한곳에서 다음 업무로.</h3><p>여러 마켓의 주문을 모아 확인하고, 연결된 공급사 상품과 옵션으로 발주를 이어갑니다. 공급사 송장도 주문이 들어온 마켓으로 연결합니다.</p><ul class="check-list"><li>여러 마켓의 주문 현황을 함께 확인</li><li>공급사 상품·옵션과 발주 정보 연결</li><li>송장과 배송 처리 결과 확인</li></ul><a class="inline-link" href="#markets">연동 마켓 알아보기 <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          <div class="feature-visual orders-visual"><div class="mini-topline"><b>오늘의 주문</b><span class="example-tag">기능 예시</span></div><div class="order-row"><span class="market-dot naver-dot">N</span><div><b>스마트스토어</b><p>공급사 상품·옵션 연결</p></div><span class="badge badge-soft">발주 확인</span></div><div class="order-row"><span class="market-dot toss-dot">t</span><div><b>토스</b><p>공급사 발송 정보 연결</p></div><span class="badge badge-blue">송장 확인</span></div><div class="order-row"><span class="market-dot eleven-dot">11</span><div><b>11번가</b><p>새 주문을 모아 확인</p></div><span class="badge badge-warm">처리 대기</span></div><div class="order-row"><span class="market-dot lotte-dot">L</span><div><b>롯데ON</b><p>처리 결과 함께 확인</p></div><span class="badge badge-soft">발주 확인</span></div><div class="visual-bottom"><svg class="icon"><use href="#i-flow"/></svg>주문 수집 → 상품 연결 → 발주 → 송장</div></div>
         </div>
-        <div class="card">
-          <h3>Detail pages, built for you</h3>
-          <p>Detail pages are assembled from supplier photos, with fixed header and footer banners applied to every product at once. Duplicate photos are found and removed.</p>
-          <div class="mock" aria-hidden="true">
-            <div class="detail"><div class="fix">Header</div><div>Farm photo</div><div class="x">Duplicate</div><div>Size guide</div><div>Packaging</div><div>Storage</div><div>Origin</div><div class="fix">Footer</div></div>
-          </div>
-        </div>
-        <div class="card">
-          <h3>List on six markets at once</h3>
-          <p>One product is reshaped for each marketplace's option format, required disclosures and shipping settings. Queue it and the server works through the list.</p>
-          <div class="mock" aria-hidden="true">
-            <div class="mk-row" style="margin-bottom:12px"><span class="mk n">Smart Store</span><span class="mk k">TalkStore</span><span class="mk l">Lotte ON</span><span class="mk e">11st</span><span class="mk t">Toss</span><span class="mk m">Temu</span></div>
-            <div class="r" style="border:0;padding:0"><span class="st ok">Live 5</span><div>Fuji apples 5kg queued<small>Temu in review · checked automatically</small></div><span class="st go">Review 1</span></div>
-          </div>
+
+        <div class="feature-panel" id="panel-review" role="tabpanel" aria-labelledby="tab-review" hidden>
+          <div class="feature-copy"><span class="section-index">03 / 보류·알림 확인</span><h3>멈춘 작업도,<br>이유를 확인할 수 있게.</h3><p>등록되지 않은 상품을 찾느라 헤매지 마세요. 상품과 보류 사유를 함께 확인하고, 필요한 자료를 보완한 뒤 다시 등록을 시도할 수 있습니다.</p><ul class="check-list"><li>등록 결과와 보류 사유를 한눈에 확인</li><li>확인이 필요한 일을 텔레그램 알림으로</li><li>수정 후 재시도할 상품을 직접 선택</li></ul><a class="inline-link" href="#guide">운영 방식 알아보기 <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+          <div class="feature-visual review-visual"><div class="mini-topline"><b>확인이 필요한 상품</b><span class="example-tag">기능 예시</span></div><div class="review-product"><img src="assets/pear-product.jpg" alt="사진 확인이 필요한 상품 예시" width="72" height="72" loading="lazy"><div><h4>배 선물세트</h4><span class="badge badge-warm">사진·상세페이지 확인</span></div></div><div class="reason-box"><span class="reason-title">등록이 안 된 이유</span><h4>등록에 필요한 사진이 부족합니다.</h4><p>공급사 사진과 상세페이지 연결을 확인하고, 필요한 자료를 보완해 주세요.</p></div><div class="notification-example"><svg class="icon"><use href="#i-bell"/></svg><div><b>확인이 필요한 일을 알려드립니다</b><p>텔레그램 알림에서 상품과 사유 확인</p></div></div><div class="visual-bottom"><span>자료 보완 후</span><b>다시 등록 시도 <svg class="icon"><use href="#i-arrow"/></svg></b></div></div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="band">
-    <div class="wrap">
-      <span class="eyebrow">WHY PRODUCE</span>
-      <h2>Fresh produce isn't<br>like other products</h2>
-      <p class="sub">General e-commerce tools don't fit these well, so we built for them from day one.</p>
-      <div class="why">
-        <div><span class="ex">3kg · 5kg · 10kg</span><b>Weight, size &amp; count options</b><p>The same apple comes in many weights, counts and sizes. Options are reshaped to fit each marketplace.</p></div>
-        <div><span class="ex">Gift · Home · Ugly</span><b>Quality grades</b><p>Grades are read from supplier descriptions, and at the same price the better grade is chosen.</p></div>
-        <div><span class="ex">Seasonal</span><b>Sell-outs &amp; price swings</b><p>Supply stops with the season and prices move. Checks every 30 minutes and daily keep listings current.</p></div>
-        <div><span class="ex">Origin · harvest year</span><b>Product disclosures</b><p>Each marketplace's required notice fields are filled with produce-specific defaults.</p></div>
-        <div><span class="ex">Holiday gift sets</span><b>Sets by what's inside</b><p>A beef set and a dried-persimmon set are told apart by the items they contain.</p></div>
-        <div><span class="ex">Rice · Kimchi · Seafood</span><b>Rules per category</b><p>Rice by region and brand, kimchi by type, seafood by cut and frozen state — so duplicates are caught.</p></div>
+    <section class="detail-section section">
+      <div class="container detail-grid">
+        <div class="detail-composition"><div class="photo-stack"><img src="assets/pear-photo.jpg" alt="공급사에서 제공하는 배 사진 예시" width="240" height="300" loading="lazy"><span>공급사 상품 사진</span></div><div class="detail-page-example"><span class="detail-eyebrow">PRODUCT STORY · 예시</span><h3>마음을 전하는<br>한 상자의 선물.</h3><img src="assets/pear-product.jpg" alt="상세페이지에 활용하는 배 선물세트 사진 예시" width="300" height="220" loading="lazy"><div class="detail-lines"><i></i><i></i><i></i></div><span class="detail-label">사진과 상품 정보로 구성</span></div><span class="photo-connection" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span></div>
+        <div class="feature-copy"><span class="eyebrow">상품을 보여주는 일도 더 간편하게</span><h2>사진과 상세페이지,<br>상품에 맞춰 준비하세요.</h2><p>연결된 공급사 사진과 완성 상세페이지를 활용하세요. 새 상세페이지가 필요한 상품은 AI 제작 기능으로 준비하고, 공통 안내 이미지를 함께 구성할 수 있습니다.</p><div class="detail-points"><div><span>01</span><p><b>공급사 자료 활용</b>연결된 사진과 상세페이지로 준비</p></div><div><span>02</span><p><b>AI 상세페이지 제작</b>상품 정보와 참고 문구로 글 작성</p></div><div><span>03</span><p><b>공통 안내 이미지</b>상·하단 고정 이미지 함께 구성</p></div></div></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="price">
-    <div class="wrap price">
-      <div>
-        <span class="eyebrow">PRICING RULE</span>
-        <h2>No sale<br>at a loss</h2>
-        <p class="sub" style="margin-bottom:24px">Cost includes the supplier's shipping fee. Selling prices are set on real margin, after marketplace fees and ad spend.</p>
-        <ul class="ticks"><li>Cost = supplier price + supplier shipping (one box)</li><li>Real margin after per-market fees and per-product ad spend</li><li>Raise when cost rises; keep the price when it falls</li></ul>
-      </div>
-      <div class="calc" aria-hidden="true">
-        <div class="line"><span>Supplier price</span><b>₩21,900</b></div>
-        <div class="line"><span>Supplier shipping (1 box)</span><b>+ ₩3,500</b></div>
-        <div class="line"><span>Market fee · ads</span><b>+ ₩4,100</b></div>
-        <div class="line"><span>Target margin</span><b>+ ₩3,000</b></div>
-        <div class="line sum"><span>Selling price</span><b>₩32,500</b></div>
-        <div class="rule"><div class="up">Cost up → raise price</div><div class="keep">Cost down → keep price</div></div>
-      </div>
-    </div>
-  </section>
+    <section class="market-section section" id="markets"><div class="container markets-grid"><div class="section-heading"><span class="eyebrow">판매 채널은 여러 곳, 관리하는 곳은 하나</span><h2>익숙한 마켓들을<br>연결해 보세요.</h2><p>스마트스토어·토스·11번가·롯데ON의<br>상품 등록과 주문 관리를 이어갑니다.</p><a class="inline-link" href="#contact">우리 스토어에 맞는지 문의하기 <svg class="icon"><use href="#i-arrow"/></svg></a></div><div class="market-grid"><div><span class="market-naver"><b>N</b> 스마트스토어</span><p>상품 등록 · 주문 관리</p></div><div><span class="market-toss">toss <small>쇼핑</small></span><p>상품 등록 · 주문 관리</p></div><div><span class="market-eleven">11<span>번가</span></span><p>상품 등록 · 주문 관리</p></div><div><span class="market-lotte">LOTTE <b>ON</b></span><p>상품 등록 · 주문 관리</p></div><p class="market-footnote">마켓·공급사별 지원 기능과 연동 조건은 이용 전 확인해 주세요.</p></div></div></section>
 
-  <section id="day" style="background:var(--bg-2)">
-    <div class="wrap">
-      <div class="center">
-        <span class="eyebrow">ONE DAY</span>
-        <h2>Working while you rest</h2>
-        <p class="sub">The server runs on a schedule and reports results by Telegram.</p>
-      </div>
-      <div class="day">
-        <div><span class="t">Daily 09:00</span><b>Morning summary</b><p>Last 24 hours of orders, plus a supplier price check.</p></div>
-        <div><span class="t">Every 30 min</span><b>Orders &amp; stock</b><p>New orders purchased, unpaid ones re-checked, sell-outs applied.</p></div>
-        <div><span class="t">09:00–18:00</span><b>Tracking sync</b><p>Supplier tracking posted to markets; only results notified.</p></div>
-        <div><span class="t">Hourly</span><b>Review results</b><p>Price and listing approvals on marketplaces that review them.</p></div>
-        <div><span class="t">Every 6 hours</span><b>New candidates</b><p>New supplier products found and queued as candidates.</p></div>
-      </div>
-    </div>
-  </section>
+    <section class="guide-section section" id="guide"><div class="container guide-grid"><div class="section-heading"><span class="eyebrow">시작하기 전에</span><h2>궁금한 점을<br>먼저 살펴보세요.</h2><p>운영 중인 스토어에 맞는 방식으로<br>연결하고 시작할 수 있도록.</p></div><div class="faq-list"><details open><summary>어떤 서비스인가요?<span aria-hidden="true">+</span></summary><p>공급사 상품 선택과 AI 등록 준비부터 여러 마켓의 상품·주문·발주 관리까지 이어주는 판매 업무 서비스입니다. 현재 농수산물 공급사 연동과 판매 운영을 바탕으로 준비하고 있습니다.</p></details><details><summary>어떤 마켓을 연결할 수 있나요?<span aria-hidden="true">+</span></summary><p>현재 안내하는 마켓은 스마트스토어, 토스, 11번가, 롯데ON입니다. 각 마켓의 판매자 계정과 연동 조건이 필요하며, 마켓마다 지원하는 기능이 다를 수 있습니다.</p></details><details><summary>상품을 담으면 바로 판매가 시작되나요?<span aria-hidden="true">+</span></summary><p>고른 상품과 옵션으로 등록을 준비하고, 등록 결과를 확인합니다. 상품 자료나 마켓 검수가 필요한 경우에는 보류·검수 상태를 확인하고 필요한 내용을 보완해야 합니다.</p></details><details><summary>PC를 항상 켜놓아야 하나요?<span aria-hidden="true">+</span></summary><p>서버에서 처리하는 업무와 PC 작업기로 처리하는 AI 업무를 구분합니다. PC 작업기 이용 여부에 따라 실행 조건이 달라지므로, 이용할 기능에 맞춰 안내해 드립니다.</p></details><details><summary>요금과 이용 시작은 어떻게 확인하나요?<span aria-hidden="true">+</span></summary><p>이용 요금과 가입 안내는 문의를 통해 확인해 주세요. 운영 중인 마켓과 이용할 공급사를 함께 알려주시면 필요한 연동 범위를 확인하는 데 도움이 됩니다.</p></details></div></div></section>
 
-  <section id="contact" style="padding-top:96px">
-    <div class="wrap final" style="padding-bottom:0">
-      <div class="box">
-        <div>
-          <h2>We run on it every day</h2>
-          <p>Our own fresh produce store runs on Linkle House today. If you'd like early access before we open it to other sellers, get in touch.</p>
-        </div>
-        <a class="btn" href="mailto:support@linklehouse.xyz">support@linklehouse.xyz</a>
-      </div>
-    </div>
-  </section>
-</main>
+    <section class="contact-section" id="contact"><div class="container contact-inner"><span class="eyebrow">LINK YOUR WORK. MAKE ROOM FOR MORE.</span><h2>판매하는 일에,<br>조금 더 여유가 생기도록.</h2><p>상품을 담는 순간부터 주문을 처리하는 순간까지.<br>링클하우스로 이어가세요.</p><a class="button" href="mailto:support@linklehouse.xyz?subject=%EB%A7%81%ED%81%B4%ED%95%98%EC%9A%B0%EC%8A%A4%20%EC%9D%B4%EC%9A%A9%20%EB%AC%B8%EC%9D%98">이용 문의하기 <svg class="icon"><use href="#i-arrow"/></svg></a><button class="email-copy" id="email-copy" aria-label="문의 이메일 주소 복사">support@linklehouse.xyz <span>주소 복사</span></button><p class="copy-status" id="copy-status" role="status"></p></div></section>
+  </main>
 
-<footer>
-  <div class="wrap">
-    <div class="biz">
-      <b>Linkle House</b> is built and operated by <b>Sun of June (유월의태양)</b>, a registered e-commerce business in the Republic of Korea.<br>
-      Representative: Seonjun Kim · Business Registration No. 316-26-02276 (National Tax Service, Korea) · Established July 2026<br>
-      6, Daedunsan-ro 480beon-gil, Jung-gu, Daejeon 34980, Republic of Korea · <a href="mailto:support@linklehouse.xyz">support@linklehouse.xyz</a>
-    </div>
-    <span>© 2026 Sun of June</span>
-  </div>
-</footer>
-<script src="site.js"></script>
+  <footer class="site-footer"><div class="container"><div class="footer-top"><a href="#" class="brand"><span class="brand-symbol"><img src="assets/linklehouse-jade.png" alt="" width="56" height="56" loading="lazy"></span><span>링클하우스<small>LINKLE HOUSE</small></span></a><p>판매 업무가 이어지는 곳.</p><a href="mailto:support@linklehouse.xyz">서비스 문의 <span>↗</span></a></div><div class="business-info"><span>상호: 유월의태양</span><span>대표: 김선준</span><span>사업자등록번호: 316-26-02276</span><span>문의: support@linklehouse.xyz</span><br><span>주소: 대전광역시 중구 대둔산로480번길 6</span></div><div class="footer-bottom"><span>© 2026 Linkle House. All rights reserved.</span><span>판매 업무가 이어지는 곳</span></div></div></footer>
+  <button class="back-top" aria-label="맨 위로 이동" hidden>↑</button>
+  <dialog id="login-dialog" aria-labelledby="login-title"><button class="dialog-close" aria-label="닫기">×</button><span class="eyebrow">LINKLE HOUSE</span><h2 id="login-title">회원 서비스 이용 안내</h2><p>회원 서비스 연결을 준비하고 있습니다.<br>이용을 원하시면 문의해 주세요.</p><a class="button" href="mailto:support@linklehouse.xyz?subject=%ED%9A%8C%EC%9B%90%20%EC%84%9C%EB%B9%84%EC%8A%A4%20%EC%9D%B4%EC%9A%A9%20%EB%AC%B8%EC%9D%98">이용 문의하기 <svg class="icon"><use href="#i-arrow"/></svg></a></dialog>
 </body>
 </html>
