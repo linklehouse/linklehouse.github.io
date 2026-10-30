@@ -47,8 +47,8 @@
 
   document.getElementById('email-copy').addEventListener('click', async () => {
     const status = document.getElementById('copy-status');
-    try { await navigator.clipboard.writeText('support@linklehouse.xyz'); status.textContent = '이메일 주소를 복사했습니다.'; }
-    catch { status.textContent = '이메일 주소: support@linklehouse.xyz'; }
+    try { await navigator.clipboard.writeText('support@linklehouse.com'); status.textContent = '이메일 주소를 복사했습니다.'; }
+    catch { status.textContent = '이메일 주소: support@linklehouse.com'; }
   });
 
   const demoButton = document.getElementById('demo-run');
