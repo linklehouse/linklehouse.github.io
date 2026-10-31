@@ -34,11 +34,6 @@
     });
   });
 
-  const dialog = document.getElementById('login-dialog');
-  document.querySelectorAll('[data-login]').forEach(button => button.addEventListener('click', () => dialog.showModal()));
-  dialog.querySelector('.dialog-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', e => { if (e.target === dialog) { const r = dialog.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close(); } });
-
   const backTop = document.querySelector('.back-top');
   function updateBackTop() { backTop.hidden = window.scrollY < 700; }
   window.addEventListener('scroll', updateBackTop, { passive: true });
