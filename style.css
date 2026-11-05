@@ -10,3 +10,5 @@
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 /* 마켓 3곳 (쿠팡·롯데ON·11번가): 휴대폰에서도 세 칸이 같은 너비로 */
 @media(max-width:640px){.market-grid{gap:8px}.market-grid>div{padding:22px 6px;min-height:118px}.market-grid .market-coupang{font-size:24px;letter-spacing:-.055em}.market-grid .market-lotte{font-size:14px}.market-grid .market-eleven{font-size:22px}.market-grid .market-eleven span{font-size:13px}.market-grid>div>p{font-size:9.5px}.market-names>span{min-width:0}.market-names{column-gap:28px}}
+.who-section{background:#fff}.who-line article{padding-top:26px}.who-line .flow-icon{margin-top:0}.who-line .flow-line article:before{top:-4px}
+@media(max-width:800px){.who-section .horizontal-heading>p br{display:none}}
