@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#168568">
+  <title>회원가입 | 링클하우스</title>
+  <meta name="description" content="위탁판매 상품 등록·주문 발주 자동화 SaaS 링클하우스 회원가입 페이지입니다.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://linklehouse.com/signup.html">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .signup-page { padding: 48px 0 80px; background: #f9fbf9; min-height: 80vh; }
+    .signup-card { max-width: 480px; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 36px 32px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    .signup-header { text-align: center; margin-bottom: 28px; }
+    .signup-header h1 { font-size: 26px; font-weight: 800; color: var(--ink); margin: 12px 0 8px; letter-spacing: -0.5px; }
+    .signup-header p { font-size: 14px; color: var(--muted); margin: 0; }
+    
+    .kakao-btn { display: flex; align-items: center; justify-content: center; width: 100%; height: 48px; background: #FEE500; color: #191919; border-radius: 10px; font-size: 15px; font-weight: 700; text-decoration: none; border: 0; cursor: pointer; margin-bottom: 24px; gap: 8px; }
+    .divider { display: flex; align-items: center; text-align: center; color: var(--muted); font-size: 13px; margin: 20px 0; }
+    .divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid var(--line); }
+    .divider span { padding: 0 12px; }
+    
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .required-tag { color: #d32f2f; font-size: 12px; font-weight: 700; margin-left: 4px; }
+    .form-input { width: 100%; height: 44px; padding: 0 14px; border: 1px solid #cfd8d3; border-radius: 8px; font-size: 14px; box-sizing: border-box; background: #fff; }
+    .form-input:focus { outline: none; border-color: var(--jade); box-shadow: 0 0 0 3px rgba(22, 133, 104, 0.12); }
+    .form-helper { display: block; font-size: 12px; color: #5a6e63; margin-top: 6px; line-height: 1.4; }
+    .form-helper.highlight { color: #0d634c; font-weight: 500; }
+    
+    .terms-box { background: #f4f7f5; border: 1px solid #e1e7e3; border-radius: 8px; padding: 14px; margin: 24px 0 20px; }
+    .terms-item { display: flex; align-items: flex-start; margin-bottom: 10px; font-size: 13px; color: var(--ink); }
+    .terms-item:last-child { margin-bottom: 0; }
+    .terms-item input[type="checkbox"] { margin-right: 8px; margin-top: 3px; accent-color: var(--jade); }
+    .terms-item a { color: var(--jade-dark); text-decoration: underline; margin-left: auto; font-size: 12px; }
+    
+    .submit-btn { width: 100%; height: 48px; background: var(--jade); color: #fff; border: 0; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+    .submit-btn:hover { background: var(--jade-dark); }
+    
+    .login-link { text-align: center; margin-top: 20px; font-size: 13px; color: var(--muted); }
+    .login-link a { color: var(--jade-dark); font-weight: 600; text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" aria-label="링클하우스 홈">
+        <span class="brand-symbol"><img src="assets/logo-112.png" alt="" width="56" height="56"></span>
+        <span>링클하우스<small>LINKLE HOUSE</small></span>
+      </a>
+      <div class="header-actions">
+        <a class="button button-small" href="/">홈으로</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="signup-page">
+    <div class="container">
+      <div class="signup-card">
+        <div class="signup-header">
+          <span class="brand-symbol" style="display:inline-block; margin-bottom: 8px;"><img src="assets/logo-112.png" alt="" width="48" height="48"></span>
+          <h1>링클하우스 회원가입</h1>
+          <p>판매 업무를 자동으로 잇는 가장 빠른 시작</p>
+        </div>
+
+        <button type="button" class="kakao-btn" onclick="alert('카카오 로그인 심사 승인 후 즉시 이용 가능합니다.')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.477 3 2 6.477 2 10.765c0 2.766 1.87 5.187 4.672 6.551-.186.685-.705 2.585-.808 2.991-.128.508.186.502.392.365.163-.108 2.593-1.758 3.642-2.471.688.1 1.391.154 2.102.154 5.523 0 10-3.477 10-7.765S17.523 3 12 3z"/></svg>
+          카카오로 1초 만에 시작하기
+        </button>
+
+        <div class="divider"><span>또는 일반 회원가입</span></div>
+
+        <form action="#" method="post" onsubmit="event.preventDefault(); alert('회원가입 신청이 정상 접수되었습니다.');">
+          <div class="form-group">
+            <label class="form-label">이메일 계정 <span class="required-tag">[필수]</span></label>
+            <input type="email" class="form-input" placeholder="example@linklehouse.com" required>
+            <span class="form-helper">로그인 아이디 및 주요 안내 수신용으로 사용됩니다.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">비밀번호 <span class="required-tag">[필수]</span></label>
+            <input type="password" class="form-input" placeholder="8자리 이상 영문, 숫자, 특수문자 조합" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">휴대폰 번호 <span class="required-tag">[필수]</span></label>
+            <input type="tel" class="form-input" placeholder="010-1234-5678" required>
+            <span class="form-helper highlight">※ 오픈마켓 주문 수집 후 공급사 API 발주 실패, 재고 품절, 긴급 시스템 장애 발생 시 셀러 실시간 알림톡/SMS 장애 통보를 위한 필수 수집 항목입니다.</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">스토어명 / 상호명 <span style="color:var(--muted); font-size:12px; font-weight:normal;">[선택]</span></label>
+            <input type="text" class="form-input" placeholder="스마트스토어 또는 마켓 입점 상호">
+          </div>
+
+          <div class="terms-box">
+            <label class="terms-item">
+              <input type="checkbox" required checked>
+              <span><strong>[필수]</strong> 링클하우스 서비스 이용약관 동의</span>
+              <a href="terms.html" target="_blank">보기</a>
+            </label>
+            <label class="terms-item">
+              <input type="checkbox" required checked>
+              <span><strong>[필수]</strong> 개인정보 수집 및 이용 동의 (휴대폰 번호: 발주 실패/품절 실시간 알림톡 발송용)</span>
+              <a href="privacy.html" target="_blank">보기</a>
+            </label>
+            <label class="terms-item">
+              <input type="checkbox">
+              <span>[선택] 마케팅 및 신규 기능 알림 수신 동의</span>
+            </label>
+          </div>
+
+          <button type="submit" class="submit-btn">링클하우스 가입완료</button>
+        </form>
+
+        <div class="login-link">
+          이미 계정이 있으신가요? <a href="#">로그인하기</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="business-info">
+        <span>상호: 유월의태양</span>
+        <span>대표: 김선준</span>
+        <span>사업자등록번호: 316-26-02276</span>
+        <span>문의: support@linklehouse.com</span>
+        <br>
+        <span>주소: 대전광역시 중구 대둔산로480번길 6</span>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Linkle House. All rights reserved.</span>
+        <span class="footer-legal-links">
+          <a href="terms.html">이용약관</a> · <a href="privacy.html"><strong>개인정보처리방침</strong></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
