@@ -62,8 +62,8 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="style.css?v=faq-20261105">
-  <script src="site.js?v=20261027" defer></script>
+  <link rel="stylesheet" href="style.css?v=order-board-hero">
+  <script src="site.js?v=order-board-hero" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">본문으로 건너뛰기</a>
@@ -92,30 +92,46 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow"><span class="tiny-house">⌂</span> 판매 업무가 이어지는 곳, 링클하우스</span>
-          <h1 id="hero-title">상품을 담으면,<br><span>판매 준비가</span><br>시작됩니다.</h1>
-          <p class="hero-description">공급사 상품 선택부터 AI 상품명·상세페이지 준비,<br class="desktop-break"> 여러 마켓 등록과 주문·발주 관리까지.<br>매일 반복되는 판매 업무를 한곳에서 이어가세요.</p>
-          <div class="hero-buttons"><a class="button" href="#features">주요 기능 살펴보기 <svg class="icon"><use href="#i-arrow"/></svg></a><a class="text-button" href="#contact">이용 문의 <span>↗</span></a></div>
-          <div class="hero-notes"><span><svg class="icon"><use href="#i-check"/></svg>AI로 등록 준비</span><span><svg class="icon"><use href="#i-check"/></svg>여러 마켓을 한곳에서</span></div>
+          <span class="eyebrow"><span aria-hidden="true">◈</span> 농수산물 위탁판매 주문 자동화</span>
+          <h1 id="hero-title">공급사마다 발주하고,<br><span>마켓마다 송장 넣던 일</span>을<br>덜어드려요.</h1>
+          <p class="hero-description">여러 마켓에서 들어온 주문이 어디까지 처리됐는지 한눈에 보세요. 송장이 등록된 주문과 예치금 확인이 필요한 주문을 구분해 볼 수 있어요.</p>
+          <div class="hero-buttons">
+            <a class="button" href="https://app.linklehouse.com/signup">무료로 시작하기 <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="text-button" href="#features">주요 기능 <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
 
         <div class="hero-stage">
-          <div class="stage-caption"><span class="live-dot"></span> 이렇게 판매 준비가 이어집니다 <span class="example-tag">기능 예시</span></div>
+          <div class="stage-caption">
+            <span class="stage-caption-label"><span class="live-dot" aria-hidden="true"></span> 여러 마켓의 주문을 한 화면에서</span>
+            <span class="example-tag">기능 예시</span>
+          </div>
           <div class="app-window">
-            <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>링클하우스 · 자동 등록</span><svg class="icon"><use href="#i-spark"/></svg></div>
+            <div class="window-bar"><div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div><span>링클하우스 · 전체 주문</span></div>
             <div class="app-body">
-              <div class="app-heading"><div><span class="micro-label">SELLER WORKSPACE</span><h2>판매할 상품을 담아보세요</h2></div><span class="badge badge-soft">공급사 연결</span></div>
-              <div class="demo-steps" aria-label="등록 준비 단계"><span class="active" data-stage="0">상품 선택</span><i></i><span data-stage="1">AI 등록 준비</span><i></i><span data-stage="2">마켓 등록</span></div>
-              <div class="hero-demo-panel" id="hero-demo-panel">
-                <div class="demo-product"><img src="assets/pear-product.jpg" alt="배 선물세트 상품 예시" width="112" height="112"><div><span class="badge badge-warm">공급사 상품</span><h3>나주 배 선물세트</h3><p>3kg · 5kg 옵션</p><span class="product-note"><svg class="icon"><use href="#i-check"/></svg>상품 사진·상세페이지 연결</span></div><span class="selected-check" aria-hidden="true">✓</span></div>
-                <div class="preparation-list"><div><span><svg class="icon"><use href="#i-spark"/></svg>검색 키워드로 상품명 준비</span><b>AI 준비</b></div><div><span><svg class="icon"><use href="#i-box"/></svg>사진·옵션·상세페이지 연결</span><b>자료 연결</b></div><div><span><svg class="icon"><use href="#i-store"/></svg>연결한 마켓에 등록</span><b>순서대로</b></div></div>
-              </div>
-              <button class="demo-run" id="demo-run"><span>등록 준비 미리보기</span><svg class="icon"><use href="#i-arrow"/></svg></button>
-              <p class="demo-disclaimer" id="demo-disclaimer">예시 화면입니다. 실제 상품은 등록되지 않습니다.</p>
+              <h2 id="hero-orders-title">오늘의 주문</h2>
+              <table class="hero-orders" aria-labelledby="hero-orders-title" aria-describedby="hero-orders-note">
+                <thead>
+                  <tr><th scope="col">마켓</th><th scope="col">상품</th><th scope="col">진행 상태</th></tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>쿠팡</td><td>사과 1kg</td>
+                    <td><span class="hero-order-status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>송장 등록 완료</span></td>
+                  </tr>
+                  <tr>
+                    <td>11번가</td><td>배 3kg</td>
+                    <td><span class="hero-order-status status-waiting">공급사 송장 대기</span></td>
+                  </tr>
+                  <tr>
+                    <td>롯데ON</td><td>감귤 5kg</td>
+                    <td><span class="hero-order-status status-payment">결제 대기</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="hero-orders-note" id="hero-orders-note">연결한 상품·옵션 기준 · 예치금 잔액이 충분할 때 자동 결제</p>
             </div>
           </div>
-          <div class="floating-note"><span class="note-icon"><svg class="icon"><use href="#i-check"/></svg></span><div><b>담은 상품이 다음 단계로</b><span>상품 선택부터 등록 준비까지 연결</span></div><span class="small-star" aria-hidden="true">✦</span></div>
-          <div class="stage-footer">상품 준비에 쓰던 시간, 조금 더 가볍게.</div>
         </div>
       </div>
     </section>

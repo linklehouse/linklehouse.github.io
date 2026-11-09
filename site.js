@@ -46,30 +46,4 @@
     catch { status.textContent = '이메일 주소: support@linklehouse.com'; }
   });
 
-  const demoButton = document.getElementById('demo-run');
-  const demoPanel = document.getElementById('hero-demo-panel');
-  const originalPanel = demoPanel.innerHTML;
-  const stages = [...document.querySelectorAll('[data-stage]')];
-  const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-  let finished = false;
-  const stage = index => stages.forEach((node, i) => node.classList.toggle('active', i <= index));
-  demoButton.addEventListener('click', async () => {
-    if (finished) { demoPanel.innerHTML = originalPanel; stage(0); demoButton.querySelector('span').textContent = '등록 준비 미리보기'; finished = false; return; }
-    demoButton.disabled = true;
-    demoButton.classList.add('running');
-    demoPanel.setAttribute('aria-busy', 'true');
-    stage(1);
-    demoButton.querySelector('span').textContent = 'AI 상품명과 자료를 준비하는 과정';
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    await wait(reduced ? 0 : 1000);
-    demoPanel.innerHTML = '<div class="demo-success"><span class="success-circle"><svg class="icon"><use href="#i-spark"/></svg></span><h3>사진과 상품 정보로 등록 준비</h3><p>상품명 · 카테고리 · 옵션 · 상세페이지를 준비하고<br>연결한 마켓으로 다음 단계를 이어갑니다.</p><div class="demo-mini-markets"><span>쿠팡</span><span>롯데ON</span><span>11번가</span></div></div>';
-    await wait(reduced ? 0 : 1400);
-    stage(2);
-    demoPanel.innerHTML = '<div class="demo-success"><span class="success-circle"><svg class="icon"><use href="#i-check"/></svg></span><h3>등록 결과까지 한눈에</h3><p>완료한 상품과 확인이 필요한 상품을 살펴보고<br>주문·발주 관리로 이어갑니다.</p><div class="demo-mini-markets"><span>등록 결과 확인</span><span>보류 사유 확인</span></div></div>';
-    demoPanel.removeAttribute('aria-busy');
-    demoButton.querySelector('span').textContent = '처음부터 다시 보기';
-    demoButton.classList.remove('running');
-    demoButton.disabled = false;
-    finished = true;
-  });
 })();
